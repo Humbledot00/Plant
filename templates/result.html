@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #5a67d8;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .result-text {
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+        }
+        a {
+            text-decoration: none;
+            color: #5a67d8;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #434190;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Result</h1>
+        <div class="result-text">
+            <p><strong>Processed Text:</strong> {{ result_text }}</p>
+        </div>
+        <div>
+            <h2>Uploaded Image:</h2>
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <a href="{{ url_for('index') }}">Upload Another Image</a>
+        </div>
+    </div>
+</body>
+</html>
